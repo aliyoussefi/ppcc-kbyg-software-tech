@@ -1,0 +1,12 @@
+{
+  "name": "ppcc-kbyg-local",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local, no-build personalized PPCC conference guide",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

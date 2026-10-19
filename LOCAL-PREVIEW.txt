@@ -1,0 +1,128 @@
+PPCC Know Before You Go - local working version
+
+Run from this folder:
+  npm start
+Or:
+  node server.cjs
+
+Preview:
+  http://localhost:4173/#start
+
+Optional alternative port:
+  node server.cjs 4174
+
+No npm install or build step is required. The server binds only to 127.0.0.1.
+The static site has no backend, form submissions or automatic scraping.
+Reload the page after an edit. If you edit server.cjs (for example to serve a new file),
+restart the server.
+
+Layout:
+The outer page is bounded to the browser's dynamic viewport. The header stays
+visible; longer sections, sessions and the footer scroll inside the inset guide
+region. That region also supports keyboard scrolling. Tab changes return it to
+the top. Desktop and short-screen hero sizing keeps the landing controls visible.
+
+Files:
+  index.html   - page structure and placeholder branding
+  styles.css   - reference-matched dark visual design, planner, map and banner styles
+  data.js      - audience, conference facts, checklist, FAQ and the verified evening events
+  sessions.js  - official session facts, topic groups, technology names and editorial efficiency notes
+  maps.js      - Level 1 and Level 3 floor-plan geometry and the room-string locator
+  exporter.js  - dependency-free PDF writer, day-map PNG composer and .ics builder
+  app.js       - tabs, video, checklist, search, agenda store, Start page and evening cards
+  planner.js   - On the Ground: interactive floor map, session picker, agenda list, exports
+  server.cjs   - localhost-only static preview (explicit file whitelist)
+
+Audience:
+The Start page speaks to software and technology companies. The topic filters are
+Scout / Autopilot, High-tech peers, Cowork, FinOps / cost & ROI, and Engineering & platform.
+
+Session import:
+The October 19, 2026 scan reviewed all 227 public entries at:
+  https://powerplatformconf.com/sessions
+The curated catalogue has 50 unique sessions: all eight Scout/Autopilot mentions,
+all fourteen Cowork mentions, the High-Tech Industry Customer Roundtable, ten cost/ROI
+matches (four directly cost-focused and six labeled adjacencies), and selected
+engineering and platform deep dives. Categories overlap. Workshops and private
+invitations were not scanned.
+Official titles, speakers, times, rooms, types and levels are retained in
+sessions.js. Summaries, efficiency angles and highlights are editorial, not
+measured savings or official recommendations. Keep sourceUrl and collectedAt.
+Use null for unpublished dates, times or locations. Sessions without a confirmed
+conference date appear in a separate Date unconfirmed column. Never invent them.
+
+Technology named by each session (sessions.js, the "tech" map):
+Each card shows "Technology showcased" ("Technology discussed" for roundtables) with the
+products the session's own official title or abstract names, most prominent first. The same
+list appears in the On the Ground picker, the search box, the PDF/PNG and the .ics file.
+  - 47 of the 50 sessions name at least one technology. 8760 (Token Meter exec panel), 8849
+    (agent pilots ROI roundtable) and 8881 (testing and evals roundtable) name no product, so
+    they have no technology line. Do not fill them in from the organizer's tags.
+  - Three sessions (8690, 8765, 8821) name only the generic "Power Platform".
+  - Only add a name that the official title or abstract itself uses (checked October 19, 2026
+    against the 227 session records on the sessions page). The organizer's separate "products"
+    tags are not used: they file Cowork, Scout/Autopilot, Work IQ and similar offerings under
+    other products (for example a Cowork session tagged Copilot Studio).
+  - Each session keeps the wording of its own text: some say Microsoft Autopilot and one says
+    Microsoft Scout. Names are not exhaustive and are not a promise of what will be demonstrated.
+  - The sessions page defers some long abstracts as "$NN" references in its page data; the
+    text sits in an inline "NN:T<hex length>," row elsewhere in the same data stream.
+
+Evening events (data.js, "evenings"):
+  - Attendee Party: Pitbull Concert, Wed Oct 28, 8:00-10:00 PM, MGM Grand Garden Arena.
+    The live PPCC homepage gives the 8:00 PM start, the Arena and the invitation to full
+    conference attendees. The 10:00 PM end is from the organizer's October 15 schedule PDF.
+  - Opening Reception & Night Market, Tue Oct 27, 5:00-7:30 PM, Expo Hall, Marquee Ballroom,
+    Level 1 (organizer's October 15 schedule PDF; the live homepage lists the same hours).
+  Sources: https://powerplatformconf.com/ and
+  https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf
+  Collected October 19, 2026. Eligibility, times and venues must not be inferred; use null.
+
+Agenda builder and floor maps (On the Ground tab):
+  - Sessions and evening events share one agenda. "Add to agenda" works on the Start page,
+    the Evening Events cards, the 3 Perfect Days cards and the On the Ground picker or map.
+  - The map highlights rooms with recommended sessions (teal = highlighted top pick,
+    lilac = recommended) and numbers your picks in time order. Level and day tabs follow
+    your choices. Items at the same time are shown as alternatives, never as conflicts.
+  - Exports: PDF with the numbered floor maps for every day, a PNG of the selected day's
+    map(s) with a numbered key, and an .ics calendar file (Pacific times converted to UTC).
+  - The agenda is stored in this browser only, under the ppcc-personal-guide-v1 key
+    (the same key and shape as before, so earlier picks carry over).
+  - Room strings in sessions.js are matched to the plan by room number. Unknown rooms
+    are simply not drawn. The Grand Garden Arena is not on the Conference Center plans, so
+    it is shown as a labeled callout instead.
+
+Floor plan source / rights:
+  The maps are simplified, not-to-scale schematics redrawn with original artwork from the
+  room layout in MGM Grand's published Conference Center plans:
+  https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt502793a96bf24351/mgm-grand-meetings-conference-center-facilities-guide.pdf
+  MGM's plans are linked, not copied or embedded. On Level 1 the Marquee Ballroom and Grand
+  Pool Complex are drawn shorter than they are. Key places (registration, Expo Hall, Makers
+  Market, Community Lounge) come from the organizer's October 15 schedule.
+
+Source / rights:
+Design reference: https://jgardn22.github.io/ppcc-kbyg/#start
+Repository: https://github.com/jgardn22/ppcc-kbyg (no license declared when inspected).
+This is an independent implementation of a similar visual design, not a copy of
+that repository. No original branded artwork or healthcare session picks are
+bundled. The square tile and header treatment are new placeholder artwork.
+Montserrat is loaded through Google Fonts; it uses the SIL Open Font License.
+The public Power HUG video is linked and embedded from YouTube, not redistributed.
+
+Local browser state:
+Checklist and agenda IDs use the ppcc-personal-guide-v1 localStorage key.
+State is private to this browser origin. No private account data is included.
+The page uses network access for Google Fonts and the public YouTube thumbnail;
+the player loads only after the user chooses to play the video. Exports are built
+in the browser and are never uploaded.
+
+GitHub:
+Source: https://github.com/aliyoussefi/ppcc-kbyg-software-tech (public repository, main branch).
+The static files index.html, styles.css, data.js, sessions.js, maps.js, exporter.js,
+app.js and planner.js can be served from GitHub Pages without the preview server or any
+build tooling. Every path is relative, so they also work from a repository subpath.
+server.cjs, package.json and this file are only for the local preview. A new script must be
+added to server.cjs (and to any Pages file list) before it is served.
+The git data folder is kept outside OneDrive so sync cannot corrupt the repository; the
+".git" file in this folder points to it.
+Review branding, dates, source permissions and content before publishing changes.

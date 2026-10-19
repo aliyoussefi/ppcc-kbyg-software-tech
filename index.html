@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scout, Autopilot, Cowork, FinOps and high-tech peer session picks for software and technology companies at PPCC 2026, with Pitbull, floor maps and an agenda builder.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#090d1b">
+  <title>Know Before You Go | PPCC 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090d1b'/%3E%3Cpath d='M16 18h16c17 0 17 25 0 25h-6v8H16zm10 9v7h6c5 0 5-7 0-7z' fill='%232fffe0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="sessions.js"></script>
+  <script defer src="maps.js"></script>
+  <script defer src="exporter.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="planner.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="#start" aria-label="PPCC 2026 - Start Here"><span class="brand-symbol" aria-hidden="true">P<span>+</span></span><span>POWER PLATFORM<br><strong>COMMUNITY CONFERENCE</strong></span></a>
+      <p class="header-caption">Know Before You Go<b data-edition>Your conference edition</b></p>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation"><span id="menu-label">Start Here</span><span aria-hidden="true">&#9776;</span></button>
+    </div>
+    <nav class="wrap navigation" id="navigation" aria-label="Guide sections"><div id="tabs" role="tablist" aria-label="Guide sections"></div></nav>
+  </header>
+  <div class="content-viewport" id="content-viewport" role="region" aria-label="Conference guide content" tabindex="0">
+  <noscript><p class="wrap notice">Enable JavaScript to use this guide. The official conference site is <a href="https://powerplatformconf.com/">powerplatformconf.com</a>.</p></noscript>
+  <main id="main">
+    <section class="panel" id="panel-start" role="tabpanel" aria-labelledby="tab-start" tabindex="-1">
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <div class="brand-tile" aria-label="Conference guide - branding placeholder">
+            <div class="microsoft-word"><span class="ms-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Microsoft</div>
+            <div class="tile-art" aria-hidden="true"><span></span><span></span><span></span></div>
+            <strong>Software &amp;<br>Technology<br>Field Guide</strong><small>Build with agents.<br>Scale with confidence.</small>
+          </div>
+          <p class="eyebrow"><span class="spark" aria-hidden="true">+</span><span data-edition>Your conference edition</span></p>
+          <h1>Know <em>Before</em><br>You Go</h1>
+          <p class="lede" id="intro"></p>
+          <dl class="facts"><div><dt>When</dt><dd id="conference-dates"></dd></div><div><dt>Where</dt><dd id="conference-venue"></dd></div><div><dt id="countdown-label">Countdown</dt><dd class="accent" id="countdown"></dd></div><div class="fact-evening" id="fact-evening" hidden><dt>Wed night</dt><dd><a href="#evenings">Pitbull live</a></dd></div></dl>
+          <div class="actions"><button class="button primary" type="button" data-video="0"><span aria-hidden="true">&#9654;</span>Watch the guide<span class="button-badge">41 min</span></button><a class="button ghost" href="#ground">Build your agenda</a></div>
+        </div>
+        <div class="hero-media">
+          <div class="video-frame" id="video-frame"><button class="video-cover" type="button" data-video="0" aria-label="Play the Power HUG Know Before You Go video"><img src="https://i.ytimg.com/vi/VpZvCUSRKrs/maxresdefault.jpg" alt="Power HUG conference preparation video" width="1280" height="720"><span class="play-circle" aria-hidden="true">&#9654;</span><span class="video-badge">Power HUG Session #32 &middot; 41 min</span></button></div>
+          <p class="caption">Conference orientation from <a href="https://www.youtube.com/watch?v=VpZvCUSRKrs" target="_blank" rel="noopener noreferrer">Power HUG</a>. <a href="https://aka.ms/KBYG-Deck" target="_blank" rel="noopener noreferrer">View the companion slides &#8599;</a></p>
+          <div class="chapters"><h2 class="section-label">Jump to a topic</h2><div class="chapter-grid" id="chapters"></div></div>
+        </div>
+      </div>
+      <section class="wrap pitbull" id="pitbull-spotlight" aria-labelledby="pitbull-title" hidden></section>
+      <section class="wrap band"><div class="band-title"><h2 class="section-label">Make it your conference</h2><a class="text-link" href="#before">Full checklist &#8594;</a></div><div class="quick-grid"><a class="ticket" href="#before"><span class="ticket-number">01<small>Prepare</small></span><span><b>Get ready to go</b><small>Registration, travel &amp; essentials</small></span></a><a class="ticket" href="#ground"><span class="ticket-number">02<small>Explore</small></span><span><b>Build your agenda</b><small id="session-summary">Waiting for your session links</small></span></a><a class="ticket" href="#evenings"><span class="ticket-number">03<small>Connect</small></span><span><b>Plan beyond the agenda</b><small id="evening-summary">Evening events &amp; meetups</small></span></a></div></section>
+      <div class="wrap features"><article class="feature teal-feature" id="peer-spotlight" aria-label="High-tech peer roundtable spotlight"></article><article class="feature purple-feature"><p class="eyebrow">The software &amp; technology lens</p><h2>Ship agents in.<br>Run them well.</h2><p>Package capabilities as Cowork plugins and MCP servers, govern agents across your estate, and take ownership of the consumption economics behind them. Every session includes an editorial efficiency angle grounded in its official abstract.</p><div class="actions"><a class="button ghost small" href="#days" data-topic-target="engineering">Explore engineering picks &#8594;</a><span class="pill" id="picks-status">Curated agenda</span></div></article></div>
+      <section class="wrap guide"><h2 class="section-label">In this guide</h2><ol id="guide-index"></ol></section>
+    </section>
+    <section class="panel" id="panel-before" role="tabpanel" aria-labelledby="tab-before" tabindex="-1" hidden><div class="wrap page-head"><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>Before you go</p><h2 class="page-title">Your pre-trip checklist</h2><p class="lede">A few essentials before you leave. Your checked items stay in this browser, on this device.</p><div class="progress-row"><progress id="check-progress" value="0" max="1" aria-label="Checklist completion"></progress><b id="progress-text"></b><button class="text-button" id="reset-checklist" type="button">Reset</button></div></div><div class="wrap checklist" id="checklist"></div></section>
+    <section class="panel" id="panel-ground" role="tabpanel" aria-labelledby="tab-ground" tabindex="-1" hidden><div class="wrap page-head"><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>On the ground</p><h2 class="page-title">Find your way around<br>the MGM Grand</h2><p class="lede">Floor maps of the Conference Center with the rooms for your recommended sessions highlighted. Add sessions to build an agenda, watch the map follow your choices, then export it all with the map included.</p></div>
+      <div class="wrap planner" id="planner">
+        <div class="planner-main">
+          <section class="planner-card agenda-card" aria-labelledby="agenda-card-title">
+            <div class="card-head"><div><p class="mini-eyebrow">Your plan</p><h3 id="agenda-card-title">My agenda</h3></div><div class="card-head-end"><p class="card-count" id="agenda-count">Nothing added yet</p><button class="text-button" type="button" id="planner-clear" hidden>Clear agenda</button></div></div>
+            <div class="agenda-list" id="agenda-list"></div>
+          </section>
+          <section class="planner-card picker-card" aria-labelledby="picker-title">
+            <div class="card-head"><div><p class="mini-eyebrow">Recommended sessions</p><h3 id="picker-title">Pick your sessions</h3></div></div>
+            <p class="card-note">Add what interests you. Sessions at the same time are alternatives, not conflicts: add as many as you like and choose on the day.</p>
+            <div class="day-tabs" id="planner-days" role="group" aria-label="Conference day"></div>
+            <div class="picker" id="picker"></div>
+          </section>
+        </div>
+        <aside class="planner-aside" aria-label="Floor map">
+          <section class="planner-card map-card" aria-labelledby="map-title">
+            <div class="card-head"><div><p class="mini-eyebrow">MGM Grand Conference Center</p><h3 id="map-title">Floor map</h3></div><div class="level-tabs" id="planner-levels" role="group" aria-label="Floor level"></div></div>
+            <div class="map-toolbar"><label class="toggle"><input type="checkbox" id="map-recommended" checked> Show recommended rooms</label><span class="map-day" id="map-day-label"></span></div>
+            <div class="map-wrap" id="map-wrap"></div>
+            <ul class="map-legend" id="map-legend" aria-label="Map key"></ul>
+            <div class="room-details" id="room-details" aria-live="polite"></div>
+            <p class="offplan" id="map-offplan" hidden></p>
+            <div class="export-bar" id="export-bar">
+              <div class="export-actions" role="group" aria-label="Export your agenda"><button class="button primary small" type="button" id="export-pdf">Download PDF with maps</button><button class="button ghost small" type="button" id="export-png">Day map image (PNG)</button><button class="button ghost small" type="button" id="export-ics">Calendar (.ics)</button></div>
+              <p class="export-hint" id="export-hint" role="status"></p>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <section class="wrap key-places" aria-labelledby="key-places-title"><h2 class="section-label" id="key-places-title">Key places</h2><ul class="place-grid"><li><b>Registration</b><span>MGM Conference Center, Grand Pre-Function, Level 1. Opens 6:30 AM on Tuesday.</span></li><li><b>Expo Hall</b><span>Marquee Ballroom, Level 1. Opens 10:00 AM Tuesday, 9:00 AM Wednesday and 10:00 AM Thursday; closes 2:30 PM Thursday.</span></li><li><b>Makers Market</b><span>Outside, behind the Marquee Ballroom, Level 1.</span></li><li><b>Community Lounge</b><span>Premier Pre-function, Level 3.</span></li><li><b>MGM Grand Garden Arena</b><span>Keynotes, product talks and the Pitbull concert. The Arena is not on the Conference Center floor plans, so follow venue signage and check Whova.</span></li></ul></section>
+      <div class="wrap venue-layout"><article class="feature teal-feature"><p class="eyebrow">Your conference base</p><h3>MGM Grand, Las Vegas</h3><p>3799 S. Las Vegas Blvd.<br>Las Vegas, NV 89109</p><div class="actions"><a class="button primary small" href="https://mgmgrand.mgmresorts.com/en/amenities/property-maps.html" target="_blank" rel="noopener noreferrer">Venue maps &#8599;</a><a class="button ghost small" href="https://www.google.com/maps/search/?api=1&amp;query=MGM+Grand+Las+Vegas" target="_blank" rel="noopener noreferrer">Directions &#8599;</a></div></article><article class="feature"><p class="eyebrow">Plan a little breathing room</p><h3>Less rushing.<br>More conference.</h3><p>Check your next room before leaving a session, allow time between venues, and keep a backup session in mind.</p><p>Bring comfortable shoes, a light layer and a charger. Verify access and meeting points with the event organizers.</p></article></div><p class="wrap source-note">Floor plans: simplified schematics redrawn from the MGM Grand Conference Center plans for Levels 1 and 3 (<a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt502793a96bf24351/mgm-grand-meetings-conference-center-facilities-guide.pdf" target="_blank" rel="noopener noreferrer">facilities guide, PDF</a> &middot; <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltcc16effc4fcd12fb/mgm-grand-meetings-meeting-map-diagram-conference-center-level-three.pdf" target="_blank" rel="noopener noreferrer">Level 3 plan, PDF</a>); not to scale. Room assignments: <a href="https://powerplatformconf.com/sessions" target="_blank" rel="noopener noreferrer">official PPCC sessions index</a>, collected October 19, 2026. Key places and evening details: the organizer's <a href="https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf" target="_blank" rel="noopener noreferrer">October 15 schedule</a> and the live PPCC site. Venue and dates: <a href="https://jgardn22.github.io/ppcc-kbyg/#ground" target="_blank" rel="noopener noreferrer">reference guide</a>, accessed October 19, 2026. Rooms and times can change, so reconfirm with Whova, the venue and the conference.</p></section>
+    <section class="panel" id="panel-evenings" role="tabpanel" aria-labelledby="tab-evenings" tabindex="-1" hidden><div class="wrap page-head"><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>Evening events</p><h2 class="page-title">After the sessions,<br>keep connecting.</h2><p class="lede">Pitbull live on Wednesday night, plus Tuesday's opening reception and night market. Add any of them to your agenda and find the venue on the floor map.</p></div><div class="wrap" id="evening-content"></div></section>
+    <section class="panel" id="panel-exec" role="tabpanel" aria-labelledby="tab-exec" tabindex="-1" hidden><div class="wrap page-head"><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>Executive experience</p><h2 class="page-title">Make room for<br>the bigger conversations.</h2><p class="lede">Selected leadership sessions and executive experiences, with their eligibility and registration details.</p></div><div class="wrap" id="executive-content"></div></section>
+    <section class="panel" id="panel-days" role="tabpanel" aria-labelledby="tab-days" tabindex="-1" hidden>
+      <div class="wrap page-head agenda-head"><div><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>Your conference game plan</p><h2 class="page-title">3 Perfect Days at PPCC</h2><p class="lede">Scout / Autopilot first, then the high-tech peer roundtable, Cowork, FinOps and engineering picks for software and technology teams. Compare options, add what you like to your agenda and see every room on the map. Times are Pacific (Las Vegas).</p></div><div class="agenda-status"><span class="pill" id="agenda-status">Curated sessions</span><p id="saved-count">Nothing in your agenda yet</p><a class="text-link" href="#ground" id="agenda-map-link">Agenda &amp; floor map &#8594;</a></div></div>
+      <div class="wrap topic-filters" id="topic-filters" role="group" aria-label="Filter by session focus"></div>
+      <div class="wrap curation-context"><p id="category-explanation"></p><p><a class="text-link" href="https://powerplatformconf.com/sessions" target="_blank" rel="noopener noreferrer">Official sessions index &#8599;</a> &middot; Collected October 19, 2026 &middot; Categories overlap. <a href="https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf" target="_blank" rel="noopener noreferrer">Organizer's schedule PDF (Oct 15) &#8599;</a></p></div>
+      <div class="wrap agenda-tools"><label class="search"><span aria-hidden="true">&#9906;</span><input id="session-search" type="search" aria-label="Search sessions" placeholder="Search titles, speakers, technology or efficiency"></label><label class="saved-filter"><input type="checkbox" id="saved-only"> My agenda only</label><button class="text-button" id="clear-saved" type="button">Clear agenda</button></div>
+      <p class="wrap notice" id="session-notice">Pick your path. Sessions in the same time slot are alternatives, so add more than one and choose what suits you on the day. All options stay available in the guide.</p>
+      <p class="wrap results-count" id="session-results" role="status"></p>
+      <p class="wrap notice" id="saved-alternatives" role="status" hidden></p><div class="wrap days-grid" id="days-grid"></div><p class="wrap source-note" id="sessions-source"></p>
+    </section>
+    <section class="panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq" tabindex="-1" hidden><div class="wrap page-head"><p class="eyebrow"><span class="spark" aria-hidden="true">+</span>FAQ &amp; links</p><h2 class="page-title">Good questions.<br>Useful answers.</h2><p class="lede">The essentials for using your personalized conference guide.</p></div><div class="wrap faq-layout"><div><label class="search"><span aria-hidden="true">&#9906;</span><input type="search" id="faq-search" aria-label="Search questions" placeholder="Search questions"></label><div id="faq-list"></div><p class="notice" id="faq-empty" hidden>No matching questions. Try another search.</p></div><aside class="feature links-card"><h3>Worth bookmarking</h3><a class="text-link" href="https://powerplatformconf.com/" target="_blank" rel="noopener noreferrer">Official conference site &#8599;</a><a class="text-link" href="https://powerplatformconf.com/sessions" target="_blank" rel="noopener noreferrer">Official agenda &#8599;</a><a class="text-link" href="https://whova.com/" target="_blank" rel="noopener noreferrer">Whova &#8599;</a><a class="text-link" href="https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf" target="_blank" rel="noopener noreferrer">Organizer's schedule (PDF) &#8599;</a><a class="text-link" href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt502793a96bf24351/mgm-grand-meetings-conference-center-facilities-guide.pdf" target="_blank" rel="noopener noreferrer">MGM floor plans (PDF) &#8599;</a><a class="text-link" href="https://jgardn22.github.io/ppcc-kbyg/#start" target="_blank" rel="noopener noreferrer">Original reference guide &#8599;</a></aside></div></section>
+  </main>
+      <section class="help-band"><div class="wrap help-row"><div><h2>Your conference. Your game plan.</h2><p>A little preparation goes a long way.</p></div><a class="button primary" href="#days">Explore your sessions &#8594;</a></div></section>
+  <footer class="wrap footer"><a class="brand" href="#start"><span class="brand-symbol" aria-hidden="true">P<span>+</span></span><span>POWER PLATFORM<br><strong>COMMUNITY CONFERENCE</strong></span></a><p>Created By Ali Youssefi. Design Reference by <a href="https://jgardn22.github.io/ppcc-kbyg/" target="_blank" rel="noopener noreferrer">Jake Gardner</a>.</p></footer>
+  </div>
+  <p id="storage-warning" class="storage-warning" role="status" hidden>Browser storage is unavailable. Your selections will not persist after this page closes.</p>
+</body>
+</html>
