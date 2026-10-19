@@ -118,11 +118,16 @@ in the browser and are never uploaded.
 
 GitHub:
 Source: https://github.com/aliyoussefi/ppcc-kbyg-software-tech (public repository, main branch).
+Live site: https://aliyoussefi.github.io/ppcc-kbyg-software-tech/ (GitHub Pages, deployed from
+the main branch root with no build step; a push goes live in about a minute, and browsers may
+cache pages for up to 10 minutes).
 The static files index.html, styles.css, data.js, sessions.js, maps.js, exporter.js,
-app.js and planner.js can be served from GitHub Pages without the preview server or any
-build tooling. Every path is relative, so they also work from a repository subpath.
-server.cjs, package.json and this file are only for the local preview. A new script must be
-added to server.cjs (and to any Pages file list) before it is served.
+app.js and planner.js run on GitHub Pages without the preview server or any build tooling.
+Every path is relative, so they work from the repository subpath.
+server.cjs, package.json and this file are only for the local preview, but Pages publishes
+every file in the repository root, so never commit private notes or drafts there. A new
+script must also be added to the server.cjs whitelist for the local preview.
 The git data folder is kept outside OneDrive so sync cannot corrupt the repository; the
 ".git" file in this folder points to it.
-Review branding, dates, source permissions and content before publishing changes.
+Review branding, dates, source permissions and content before pushing changes, because every
+push to main updates the live site.
