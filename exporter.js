@@ -302,7 +302,7 @@
 
     const research = data.research || {};
     const sources = [
-      [`Session rooms and times: official PPCC sessions index, collected ${research.collectedAt || "October 19, 2026"}`, research.sourceUrl || "https://powerplatformconf.com/sessions"],
+      [`Session rooms and times: official PPCC sessions index, collected ${research.collectedNote || research.collectedAt || "October 19, 2026"}`, research.sourceUrl || "https://powerplatformconf.com/sessions"],
       ["Evening events and key places: official PPCC site and the organizer's October 15 schedule (PDF)", research.schedulePdf || "https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf"],
       ["Floor maps: simplified, not-to-scale schematics redrawn from the MGM Grand Conference Center plans", maps.sources.facilitiesGuide]
     ];

@@ -47,6 +47,7 @@
     [8467,"Full-Stack Solutions with Code Apps",28,"08:00","09:00","Grand Ballroom 122",["Tomas Prokop"],"S","Advanced (300)"],
     [8819,"Industry Deep Dive | From Automation to Agentic AI: A High-Tech Industry Customer Roundtable",28,"10:00","11:00","Room 352",["Nick Fratello","Tara Mason","Av Erlenwein","Beau Dossin","Jordan Kates","Mike Tamburrino","Greg Gentling"],"R","Intermediate (200)"],
     [8821,"Industry Deep Dive | How Production GenAI Agents Get Built, Deployed, Funded & Cost-Optimized",28,"15:30","16:30","Chairmans BR 368",["Satish Paul","Ben Tickner","Michael Lang","Ryan Kane","Coskun Cavusoglu","Mark Drenka"],"S","Foundational (100)"],
+    [8758,"More Than a Chatbot: Rich, Interactive Experiences with Copilot Studio Agents",27,"11:30","12:30","Chairman's BR 370",["Rachel Kingdon","Evan Lew","Jacob Wilkinson","Michael Pena"],"S","Intermediate (200)"],
     [8753,"Power Apps + Power Automate: Best Practices for Building Production-Ready Solutions",28,"11:30","12:30","Boulevard Ballroom 163",["Ilya Fainberg","Sonali Panda","Christopher Moncayo","Olivier Conort"],"S","Advanced (300)"],
     [8695,"Power BI Administration at Scale: Governance Patterns for Enterprise Deployments",28,"08:00","09:00","Grand Ballroom 114",["Heidi Hasting","Shabnam Watson"],"S","Advanced (300)"],
     [8690,"Power Platform Agentic Testing",29,"14:30","15:30","Grand Ballroom 116",["Rami Mounla"],"S","Intermediate (200)"],
@@ -100,6 +101,7 @@
     8467:["T","Live-code React/TypeScript, C# Dataverse plug-ins, connectors and background flows with deployment automation.","See one coherent developer loop across frontend, backend, source control and release rather than disconnected tooling demos."],
     8819:["S","Leaders from BMC, Sage, Ivanti, Precisely and Trimble discuss enterprise AI journeys, governance and operational lessons.","Compare high-tech peer patterns for turning agent pilots into governed operations and measurable business outcomes.","Peer match for software and technology companies: the official listing is the High-Tech Industry Customer Roundtable."],
     8821:["FT","EY, PwC, RSM and Accenture cover specifications, shared context, evals, deployment, model updates and GenAI funding and cost choices.","Connect the SDLC to consumption economics, including when smaller models can avoid unnecessary frontier-model spend."],
+    8758:["T","See how Copilot Studio agents can answer with maps, charts and visualizations and gather input through app-like MCP Apps experiences.","Explore replacing long text replies and chat back-and-forth with interactive views and human-in-the-loop steering that keep users in control."],
     8753:["T","Power CAT covers app performance, dependable flows, testing, ALM, troubleshooting and post-release operation.","Reduce fragile dependencies and support effort by applying production patterns across the entire app-and-flow lifecycle."],
     8695:["FT","Explore workspace lifecycle automation, compliance monitoring, license optimization and Power BI administration APIs.","Replace repeated workspace administration with Power Automate and API-based operating patterns.","FinOps-adjacent: Power BI license optimization within a broader administration session."],
     8690:["T","Demo practical AI-driven testing for Power Platform customizations, frontends and nondeterministic agents.","Add repeatable testing to the delivery workflow instead of relying solely on manual validation."],
@@ -108,7 +110,7 @@
     8786:["AT","Explore Dataverse business context, Microsoft IQ, MCP and Agent 365 through an end-to-end agent architecture.","Reuse context and governance foundations instead of compensating for missing business knowledge with more prompt engineering.","Related mention: includes autopilot agents in a broader Microsoft IQ architecture session."],
     8772:["C","See how Copilot, Cowork, Power Platform and Work IQ connect apps and business context in one workflow.","Bring existing apps and actions into the work surface rather than requiring users to navigate separate experiences."]
   };
-  // Technology named by each session's own official title or abstract (collected 2026-10-19), most prominent first.
+  // Technology named by each session's own official title or abstract (collected 2026-10-19; 8758 on 2026-10-22), most prominent first.
   // Only names the listing itself uses; sessions that name no product (8760, 8849, 8881) are omitted on purpose.
   // The organizer's separate "products" tags are not used: they file newer offerings such as Cowork,
   // Scout/Autopilot and Work IQ under other products. Names are not a promise of what will be demonstrated.
@@ -127,6 +129,7 @@
     8741:["Power Platform API","AskAdvisor","Advanced Connector Policies"],
     8749:["Hosted Managed Agents","Copilot Studio"],
     8753:["Power Apps","Power Automate"],
+    8758:["Copilot Studio","MCP Apps"],
     8765:["Power Platform"],
     8767:["Power Platform","Managed Apps"],
     8770:["Power Apps code apps","Copilot Managed Runtime"],
@@ -170,6 +173,8 @@
     schedulePdf: "https://devintxcontent.blob.core.windows.net/showcontent/Schedule/PPCC-Schedule-2026-10-15.pdf",
     collectedAt: "2026-10-19",
     publishedSessionsReviewed: 227,
+    // Sessions added after the October 19 scan, each taken from its own official session page on the date shown.
+    addedSessions: { 8758: "2026-10-22" },
     scope: "Public sessions index and its embedded session facts; workshops and private invitations are outside this scan.",
     method: "All title/abstract mentions of Scout, Autopilot and Cowork; the High-Tech industry customer roundtable for software and technology companies; explicit FinOps and cost sessions plus labeled licensing/ROI adjacencies; a curated engineering and platform selection. Categories overlap."
   };
@@ -181,6 +186,12 @@
     { id: "engineering", label: "Engineering & platform", description: "A curated technical lens for software and technology teams: managed runtime, code-first delivery, MCP integrations, DevOps, identity, governance, observability, testing and modernization. Efficiency angles are editorial interpretations, not measured savings." }
   ];
   Object.keys(tech).forEach((id) => { if (!facts.some((row) => String(row[0]) === id)) throw new Error(`Technology listed for unknown official session ${id}`); });
+  Object.keys(data.research.addedSessions).forEach((id) => { if (!facts.some((row) => String(row[0]) === id)) throw new Error(`Added-session date given for unknown official session ${id}`); });
+  const addedDates = [...new Set(Object.values(data.research.addedSessions))];
+  const addedCount = Object.keys(data.research.addedSessions).length;
+  data.research.collectedNote = addedCount
+    ? `${data.research.collectedAt}, plus ${addedCount} session${addedCount === 1 ? "" : "s"} added ${addedDates.join(" and ")}`
+    : data.research.collectedAt;
   data.sessions = facts.map(([id, title, day, start, end, room, speakers, format, level]) => {
     const entry = notes[id];
     if (!entry) throw new Error(`Missing curation for official session ${id}`);
@@ -194,7 +205,7 @@
       description: entry[1], efficiency: entry[2], matchNote: entry[3] || null,
       tech: tech[id] || [],
       sourceUrl: `https://powerplatformconf.com/sessions/${encodeURIComponent(title.replaceAll(" ", "-"))}`,
-      collectedAt: data.research.collectedAt, featured: topPicks.has(id)
+      collectedAt: data.research.addedSessions[id] || data.research.collectedAt, featured: topPicks.has(id)
     };
   });
   data.executiveExperiences = data.sessions.filter((session) => session.officialId === 8760).map((session) => ({

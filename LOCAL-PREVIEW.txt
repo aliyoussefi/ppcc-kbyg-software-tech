@@ -40,11 +40,21 @@ Scout / Autopilot, High-tech peers, Cowork, FinOps / cost & ROI, and Engineering
 Session import:
 The October 19, 2026 scan reviewed all 227 public entries at:
   https://powerplatformconf.com/sessions
-The curated catalogue has 50 unique sessions: all eight Scout/Autopilot mentions,
+The curated catalogue has 51 unique sessions: all eight Scout/Autopilot mentions,
 all fourteen Cowork mentions, the High-Tech Industry Customer Roundtable, ten cost/ROI
 matches (four directly cost-focused and six labeled adjacencies), and selected
 engineering and platform deep dives. Categories overlap. Workshops and private
 invitations were not scanned.
+Added after the scan, from the session's own official page:
+  - 8758 More Than a Chatbot: Rich, Interactive Experiences with Copilot Studio Agents
+    (Tue Oct 27, 11:30-12:30, Chairman's BR 370; Engineering & platform), added October 22, 2026.
+    Its date lives in data.research.addedSessions in sessions.js, so its card, the notes that
+    cite the collection date and the PDF footer say "plus 1 session added 2026-10-22".
+To add another session: copy its day, time, room, speakers (in the index's order), format and
+level into the facts rows; add its note and technology names (from its own title/abstract);
+add its ID and collection date to data.research.addedSessions; then update the card count in
+the "How were these sessions selected?" FAQ and the counts below. Room strings are matched to
+the floor plan by room number, so a new room name needs no map change.
 Official titles, speakers, times, rooms, types and levels are retained in
 sessions.js. Summaries, efficiency angles and highlights are editorial, not
 measured savings or official recommendations. Keep sourceUrl and collectedAt.
@@ -55,12 +65,13 @@ Technology named by each session (sessions.js, the "tech" map):
 Each card shows "Technology showcased" ("Technology discussed" for roundtables) with the
 products the session's own official title or abstract names, most prominent first. The same
 list appears in the On the Ground picker, the search box, the PDF/PNG and the .ics file.
-  - 47 of the 50 sessions name at least one technology. 8760 (Token Meter exec panel), 8849
+  - 48 of the 51 sessions name at least one technology. 8760 (Token Meter exec panel), 8849
     (agent pilots ROI roundtable) and 8881 (testing and evals roundtable) name no product, so
     they have no technology line. Do not fill them in from the organizer's tags.
   - Three sessions (8690, 8765, 8821) name only the generic "Power Platform".
   - Only add a name that the official title or abstract itself uses (checked October 19, 2026
-    against the 227 session records on the sessions page). The organizer's separate "products"
+    against the 227 session records on the sessions page; 8758 on October 22, 2026 against its
+    own session page). The organizer's separate "products"
     tags are not used: they file Cowork, Scout/Autopilot, Work IQ and similar offerings under
     other products (for example a Cowork session tagged Copilot Studio).
   - Each session keeps the wording of its own text: some say Microsoft Autopilot and one says
